@@ -1,0 +1,23 @@
+{
+    "InsertEraseCSQ": {
+        "Weight": 1.,
+        "Moves": [
+            [2., "A1Up"],
+            [1., "B1Up"],
+            [1., "B2Up"],
+            [2., "A1Down"], 
+            [1., "B1Down"],
+            [1., "B2Down"]
+        ]
+    }, 
+    "Flip": {
+        "Weight": 1.,
+        "Moves": [
+            [1., "B1Up", "B2Down", "B2Up", "B1Down"],
+            [1., "B2Down", "B1Up", "B1Down", "B2Up"]
+        ] 
+    }
+}
+
+
+

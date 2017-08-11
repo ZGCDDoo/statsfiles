@@ -1,0 +1,26 @@
+SEED = 24188;
+SWEEPS = 30000000;
+THERMALIZATION = 50000;
+NMEAS = 20;
+TIMESALPSMEAS = 5000;
+CLEANUPDATE = 100;
+ATOMIC = Atomic.json;
+LINK = Link.json;
+OBS = Obs.json;
+beta = 60.00;
+mu = 3.8071386659974915;
+tp = 0.80;
+U = 7.00;
+weightR = 0.10;
+weightI = 0.10;
+delta = 2.0;
+n = 0.4950;
+S = 5.50;
+EGreen = 15;
+EHyb = 15;
+EObs = 15;
+HYB = Hyb345.json;
+thetaUp = 0.8827875356587318;
+thetaDown = 0.87964594300514209;
+
+{}
