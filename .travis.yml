@@ -1,0 +1,16 @@
+sudo: false
+
+language: python
+
+python:
+  - 3.6
+
+install:
+  - pip install codecov
+  - pip install scipy
+
+script:
+  - coverage run tests.py
+
+after_success:
+- codecov
