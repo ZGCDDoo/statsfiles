@@ -6,6 +6,10 @@
 .. image:: https://codecov.io/gh/ZGCDDoo/statsfiles/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/ZGCDDoo/statsfiles
 
+You install like this (once in the parent directory):
+
+pip3 install -e .
+
 You run it like this:
 
 python -m statsfiles iter_start --afm
