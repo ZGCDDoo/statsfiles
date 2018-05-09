@@ -8,10 +8,13 @@
 
 You install like this (once in the parent directory):
 
-pip3 install -e .
+pip install -e .
 
 You run it like this:
 
 python -m statsfiles iter_start --afm
 
 wherre iter_start is a int and --afm is optional
+
+
+Make sure your default python is python3.
