@@ -1,0 +1,22 @@
+---
+obs_files:
+  - k.dat
+  - n.dat
+  - KEnergy.dat
+  - docc.dat
+  - sign.dat
+
+array_files:
+  names:
+    - green
+    - self
+    - hyb
+  ext:
+    - Up
+    - Down
+
+param_files:
+  names:
+    -
+  parameters:
+    - -
