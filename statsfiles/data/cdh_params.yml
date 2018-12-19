@@ -8,15 +8,17 @@ obs_files:
 
 array_files:
   names:
-    - green
-    - self
-    - hyb
-  ext:
-    - Up
-    - Down
+    - greenUp
+    - greenDown
+    - selfUp
+    - selfDown
+    - hybUp
+    - hybDown
+  middles:
+    - ""
 
 param_files:
   names:
-    -
+    - ""
   parameters:
-    - -
+    - - ""

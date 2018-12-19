@@ -13,8 +13,8 @@ array_files:
     - green
     - self
     - hyb
-  ext:
-    -
+  middles:
+    - ""
     - Up
     - Down
 

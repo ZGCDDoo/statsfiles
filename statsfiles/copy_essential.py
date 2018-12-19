@@ -8,8 +8,9 @@ class CopyEssential:
     def __init__(self, out_dir):
         """ """
         self.out_dir = out_dir
-        self.obs_files = ["energy.dat", "n.dat", "ChiSz.dat", "amagn.dat",
-                          "docc.dat", "sign.dat", "k.dat", "nSites.dat"]
+        self.obs_files = ["n.dat", "n0Up.dat", "n0Down.dat", "ChiSz.dat", "amagn.dat",
+                          "docc.dat", "sign.dat", "k.dat", "nSites.dat", "energy.dat",
+                          "KEnergy.dat", "NMeas.dat", "NWorkers.dat", "Sz.dat"]
         self.array_files = ["green", "self", "hyb"]
         self.middles = ["", "Up", "Down"]
         self.exts = [".dat", ".dat", ".dat"]
