@@ -1,15 +1,16 @@
 ---
 obs_files:
   - precipitation.dat
+  - snowfall.dat
 
 array_files:
   names:
     - temperature
   middles:
     - ""
+  exts:
+    - ".dat"
 
 param_files:
   names:
-    - ""
   parameters:
-    - - ""

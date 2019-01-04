@@ -63,8 +63,8 @@ class StatsArrays:
         self.iter_start = iter_start
         self.warning_only = warning_only  # make the program continue if files don't
         # exist, but give warning message
-        files = [file + str(self.iter_start) + end +
-                 ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
+        files = [file + str(self.iter_start) + middle +
+                 ext for file in self.array_files for middle in self.middle_files for ext in self.ext_files]
         self.check_sanity(files, self.warning_only)
         self.means = None  # set by mean()
         self.stds = None  # set by std()
@@ -82,7 +82,7 @@ class StatsArrays:
         """
 
         file_exists = os.path.isfile(file_name)
-        #print("filename = ", file_name)
+        # print("filename = ", file_name)
 
         if file_exists:
             data = np.loadtxt(file_name)
