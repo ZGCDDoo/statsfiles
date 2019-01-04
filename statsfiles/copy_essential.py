@@ -19,7 +19,7 @@ class CopyEssential:
         try:
             self.iter_max = self.get_iter_max()
         except FileNotFoundError:
-            print("Not doing copy essential...")
+            # print("Not doing copy essential...")
             self.iter_max = -100
 
         self.divers_files = ["Updates.json", "Link.json", "script",

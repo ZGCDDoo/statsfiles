@@ -5,5 +5,6 @@ Installation
 
 The installation steps are very simple:
 
-.. hightlight:: bash
-    pip install statsfiles
+.. code-block:: bash
+
+    pip install statsfiles    
