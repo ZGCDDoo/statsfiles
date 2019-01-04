@@ -5,6 +5,8 @@
 
 
 # Statsfiles
+Please consult the bare bones documentation by clicking on the docs badge above.
+
 
 Statsfiles is a small python module to compute simple statistics (average and means) of similarly named files. This can be usefull for simulations where a program outputs many files with the same name, but with a number appended. 
 
