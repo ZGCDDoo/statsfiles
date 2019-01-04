@@ -21,7 +21,7 @@ class StatsArrays:
     array_files_middle_default = ["", "Up", "Down"]
 
     def __init__(self, array_files=array_files_default, middle_files=array_files_middle_default,
-                 ext_files=[".dat", ".txt"], iter_start=1, ignore_col=None, in_dir=os.getcwd(),
+                 ext_files=[".dat", ], iter_start=1, ignore_col=None, in_dir=os.getcwd(),
                  warning_only=True):
         """Initialize the StatsArrays object.
 

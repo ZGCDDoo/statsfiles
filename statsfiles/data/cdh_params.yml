@@ -17,8 +17,7 @@ array_files:
   middles:
     - ""
   exts:
-    - dat
-    - txt
+    - .dat
 
 param_files:
   names:

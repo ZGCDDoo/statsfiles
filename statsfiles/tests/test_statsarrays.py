@@ -41,7 +41,7 @@ class TestStatsArray(unittest.TestCase):
         self.assertEqual(statsarray.in_dir, os.path.abspath(self.input_dir))
         self.assertEqual(statsarray.ignore_col, 0)
         self.assertEqual(statsarray.array_files, self.array_files_default)
-        self.assertEqual(statsarray.ext_files, [".dat", ".txt"])
+        self.assertEqual(statsarray.ext_files, [".dat", ])
         self.assertEqual(statsarray.warning_only, True)
         self.assertEqual(statsarray.iter_start, 243)
 

@@ -9,7 +9,7 @@ array_files:
   middles:
     - ""
   exts:
-    - ".dat"
+    - .dat
 
 param_files:
   names:
