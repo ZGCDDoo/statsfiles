@@ -64,5 +64,5 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
         stparams.write_results(out_dir, "statsparams.json")
 
     # copy the essential files
-    #ce = copy_essential.CopyEssential(out_dir)
-    # ce.run()
+    ce = copy_essential.CopyEssential(out_dir)
+    ce.run()
