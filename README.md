@@ -1,7 +1,7 @@
 
 [![Build Status](https://travis-ci.org/ZGCDDoo/statsfiles.svg?branch=master)](https://travis-ci.org/ZGCDDoo/statsfiles)
 [![codecov](https://codecov.io/gh/ZGCDDoo/statsfiles/branch/master/graph/badge.svg)](https://codecov.io/gh/ZGCDDoo/statsfiles)
-
+[![Documentation Status](https://readthedocs.org/projects/statsfiles/badge/?version=latest)](https://statsfiles.readthedocs.io/en/latest/?badge=latest)
 
 
 # Statsfiles
