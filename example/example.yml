@@ -1,0 +1,15 @@
+---
+obs_files:
+  - precipitation.dat
+
+array_files:
+  names:
+    - temperature
+  middles:
+    - ""
+
+param_files:
+  names:
+    - ""
+  parameters:
+    - - ""

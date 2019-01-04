@@ -18,10 +18,10 @@ class StatsArrays:
        """
 
     array_files_default = ["green", "self", "hyb"]
-    array_files_end_default = ["", "Up", "Down"]
+    array_files_middle_default = ["", "Up", "Down"]
 
-    def __init__(self, array_files=array_files_default, end_files=array_files_end_default,
-                 ext=".dat", iter_start=1, ignore_col=None, in_dir=os.getcwd(),
+    def __init__(self, array_files=array_files_default, middle_files=array_files_middle_default,
+                 ext_files=[".dat", ".txt"], iter_start=1, ignore_col=None, in_dir=os.getcwd(),
                  warning_only=True):
         """Initialize the StatsArrays object.
 
@@ -48,8 +48,8 @@ class StatsArrays:
         # creata a list of the obs_files
         self.array_files = array_files if isinstance(
             array_files, list) else [array_files]
-        self.end_files = end_files if isinstance(
-            end_files, list) else [end_files]
+        self.middle_files = middle_files if isinstance(
+            middle_files, list) else [middle_files]
 
         if ignore_col is None:
             self.ignore_col = ignore_col
@@ -58,12 +58,13 @@ class StatsArrays:
                    ), "Ayayaya, ignore_col must be None or int"
             self.ignore_col = ignore_col
 
-        self.ext = ext
+        self.ext_files = ext_files if isinstance(
+            ext_files, list) else [ext_files]
         self.iter_start = iter_start
         self.warning_only = warning_only  # make the program continue if files don't
         # exist, but give warning message
         files = [file + str(self.iter_start) + end +
-                 self.ext for file in self.array_files for end in self.end_files]
+                 ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
         self.check_sanity(files, self.warning_only)
         self.means = None  # set by mean()
         self.stds = None  # set by std()
@@ -118,26 +119,28 @@ class StatsArrays:
         means = dict()
 
         for array_file in self.array_files:
-            for end_file in self.end_files:
-                cpt = 0
-                file_name = os.path.join(
-                    self.in_dir, array_file + str(self.iter_start) + end_file + self.ext)
-                # print(file_name)
-                (data, file_exists) = self.read_file(file_name)
-                if file_exists:
-                    mean = np.zeros(data.shape)
-                    while(file_exists):
-                        mean += data
-                        cpt += 1
-                        #print("cpt ", cpt)
-                        #print(array_file + end_file + str(self.iter_start + cpt) + self.ext)
-                        file_name = os.path.join(
-                            self.in_dir, array_file + str(self.iter_start + cpt) + end_file + self.ext)
-                        (data, file_exists) = self.read_file(file_name)
+            for middle_file in self.middle_files:
+                for ext_file in self.ext_files:
+                    cpt = 0
+                    file_name = os.path.join(
+                        self.in_dir, array_file + str(self.iter_start) + middle_file + ext_file)
+                    # print(file_name)
+                    (data, file_exists) = self.read_file(file_name)
+                    if file_exists:
+                        mean = np.zeros(data.shape)
+                        while(file_exists):
+                            mean += data
+                            cpt += 1
+                            #print("cpt ", cpt)
+                            #print(array_file + middle_file + str(self.iter_start + cpt) + ext_file)
+                            file_name = os.path.join(
+                                self.in_dir, array_file + str(self.iter_start + cpt) + middle_file + ext_file)
+                            (data, file_exists) = self.read_file(file_name)
 
-                    mean /= cpt
-                    #print("MEAN ", mean)
-                    means[array_file + end_file + "_moy" + self.ext] = mean
+                        mean /= cpt
+                        #print("MEAN ", mean)
+                        means[array_file + middle_file +
+                              "_moy" + ext_file] = mean
 
         self.means = means
         # print(means)
@@ -149,32 +152,33 @@ class StatsArrays:
             self.mean
         stds = dict()
 
-        for (i, array_file) in enumerate(self.array_files):
-            for (j, end_file) in enumerate(self.end_files):
-                cpt = 0
-                file_name = os.path.join(
-                    self.in_dir, array_file + str(self.iter_start) + end_file + self.ext)
-                (data, file_exists) = self.read_file(file_name)
-                if file_exists:
-                    std = np.zeros(data.shape)
-                    if self.ignore_col is not None:
-                        std = np.delete(std, self.ignore_col, 1)
-
-                    while(file_exists):
-                        mean = self.means[array_file +
-                                          end_file + "_moy" + self.ext]
+        for array_file in self.array_files:
+            for middle_file in self.middle_files:
+                for ext_file in self.ext_files:
+                    cpt = 0
+                    file_name = os.path.join(
+                        self.in_dir, array_file + str(self.iter_start) + middle_file + ext_file)
+                    (data, file_exists) = self.read_file(file_name)
+                    if file_exists:
+                        std = np.zeros(data.shape)
                         if self.ignore_col is not None:
-                            data = np.delete(data, self.ignore_col, 1)
-                            mean = np.delete(mean, self.ignore_col, 1)
-                        std += np.power(data - mean, 2.0)
-                        cpt += 1
-                        file_name = os.path.join(
-                            self.in_dir, array_file + str(self.iter_start + cpt) + end_file + self.ext)
-                        (data, file_exists) = self.read_file(file_name)
+                            std = np.delete(std, self.ignore_col, 1)
 
-                    std /= cpt
-                    stds[array_file + end_file +
-                         "_et" + self.ext] = np.sqrt(std)
+                        while(file_exists):
+                            mean = self.means[array_file +
+                                              middle_file + "_moy" + ext_file]
+                            if self.ignore_col is not None:
+                                data = np.delete(data, self.ignore_col, 1)
+                                mean = np.delete(mean, self.ignore_col, 1)
+                            std += np.power(data - mean, 2.0)
+                            cpt += 1
+                            file_name = os.path.join(
+                                self.in_dir, array_file + str(self.iter_start + cpt) + middle_file + ext_file)
+                            (data, file_exists) = self.read_file(file_name)
+
+                        std /= cpt
+                        stds[array_file + middle_file +
+                             "_et" + ext_file] = np.sqrt(std)
 
         self.stds = stds
 
@@ -186,9 +190,9 @@ class StatsArrays:
         # directory with name Result-date or something like this
 
         files_moy = [file + end + "_moy" +
-                     self.ext for file in self.array_files for end in self.end_files]
+                     ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
         files_et = [file + end + "_et" +
-                    self.ext for file in self.array_files for end in self.end_files]
+                    ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
 
         for (key, value) in self.means.items():
             file_name = os.path.join(os.path.abspath(out_dir), key)

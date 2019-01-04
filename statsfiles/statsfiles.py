@@ -24,7 +24,7 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
     obs_files = yy_params["obs_files"]
 
     array_files = yy_params["array_files"]["names"]
-    array_files_ext = yy_params["array_files"]["middles"]
+    array_files_middles = yy_params["array_files"]["middles"]
 
     params_files = yy_params["param_files"]["names"]
 
@@ -33,8 +33,8 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
 
     # do the stats for arrays
     starr = statsarrays.StatsArrays(array_files=array_files,
-                                    end_files=array_files_ext,
-                                    ext=".dat", iter_start=iter_start,
+                                    middle_files=array_files_middles,
+                                    ext_files=[".dat"], iter_start=iter_start,
                                     ignore_col=None, in_dir=os.getcwd(),
                                     warning_only=True)
 
