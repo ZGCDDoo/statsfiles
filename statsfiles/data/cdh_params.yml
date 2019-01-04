@@ -16,6 +16,9 @@ array_files:
     - hybDown
   middles:
     - ""
+  exts:
+    - dat
+    - txt
 
 param_files:
   names:
