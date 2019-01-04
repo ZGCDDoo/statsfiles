@@ -140,7 +140,7 @@ class StatsArrays:
                         mean /= cpt
                         #print("MEAN ", mean)
                         means[array_file + middle_file +
-                              "_moy" + ext_file] = mean
+                              "_mean" + ext_file] = mean
 
         self.means = means
         # print(means)
@@ -166,7 +166,7 @@ class StatsArrays:
 
                         while(file_exists):
                             mean = self.means[array_file +
-                                              middle_file + "_moy" + ext_file]
+                                              middle_file + "_mean" + ext_file]
                             if self.ignore_col is not None:
                                 data = np.delete(data, self.ignore_col, 1)
                                 mean = np.delete(mean, self.ignore_col, 1)
@@ -178,7 +178,7 @@ class StatsArrays:
 
                         std /= cpt
                         stds[array_file + middle_file +
-                             "_et" + ext_file] = np.sqrt(std)
+                             "_std" + ext_file] = np.sqrt(std)
 
         self.stds = stds
 
@@ -189,10 +189,10 @@ class StatsArrays:
         # stats_files. by backing up the ancient result directory in a new
         # directory with name Result-date or something like this
 
-        files_moy = [file + end + "_moy" +
+        files_mean = [file + end + "_mean" +
+                      ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
+        files_std = [file + end + "_std" +
                      ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
-        files_et = [file + end + "_et" +
-                    ext for file in self.array_files for end in self.middle_files for ext in self.ext_files]
 
         for (key, value) in self.means.items():
             file_name = os.path.join(os.path.abspath(out_dir), key)
@@ -203,10 +203,10 @@ class StatsArrays:
             np.savetxt(file_name, value)
 
 
-#        for (file, mean) in zip(files_moy, self.means):
+#        for (file, mean) in zip(files_mean, self.means):
 #            file_out_mean = os.path.join(out_dir, file)
 #            np.savetxt(file_out_mean, mean)
 #
-#        for (file, std) in zip(files_et, self.stds):
+#        for (file, std) in zip(files_std, self.stds):
 #            file_out_std = os.path.join(out_dir, file)
 #            np.savetxt(file_out_std, std)

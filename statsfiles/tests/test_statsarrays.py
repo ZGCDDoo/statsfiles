@@ -84,9 +84,9 @@ class TestStatsArray(unittest.TestCase):
                                              in_dir=self.input_dir)
 
         statsarray.mean()
-        calculated_means = [statsarray.means["green_moy.dat"],
-                            statsarray.means["self_moy.dat"],
-                            statsarray.means["hyb_moy.dat"]]
+        calculated_means = [statsarray.means["green_mean.dat"],
+                            statsarray.means["self_mean.dat"],
+                            statsarray.means["hyb_mean.dat"]]
 
         good_means = [np.loadtxt(os.path.join(self.input_dir, "greenMoy.dat")),
                       np.loadtxt(os.path.join(self.input_dir, "selfMoy.dat")),
@@ -127,9 +127,9 @@ class TestStatsArray(unittest.TestCase):
                      for std in good_stds]
         bad_stds = np.multiply(0.1, good_stds)
 
-        calculated_stds = [statsarray.stds["green_et.dat"],
-                           statsarray.stds["self_et.dat"],
-                           statsarray.stds["hyb_et.dat"]]
+        calculated_stds = [statsarray.stds["green_std.dat"],
+                           statsarray.stds["self_std.dat"],
+                           statsarray.stds["hyb_std.dat"]]
 
         for (a, b) in zip(good_stds, calculated_stds):
             try:
@@ -146,8 +146,8 @@ class TestStatsArray(unittest.TestCase):
                                              in_dir=input_dir)
 
         statsarray.mean()
-        calculated_means = [statsarray.means["greenUp_moy.dat"],
-                            statsarray.means["hybDown_moy.dat"]]
+        calculated_means = [statsarray.means["greenUp_mean.dat"],
+                            statsarray.means["hybDown_mean.dat"]]
 
         good_means = [np.loadtxt(os.path.join(input_dir, "greenUpMoy.dat")),
                       np.loadtxt(os.path.join(input_dir, "hybDownMoy.dat"))]
@@ -188,9 +188,9 @@ class TestStatsArray(unittest.TestCase):
                      for std in good_stds]
         bad_stds = np.multiply(0.1, good_stds)
 
-        calculated_stds = [statsarray.stds["greenDown_et.dat"],
-                           statsarray.stds["selfUp_et.dat"],
-                           statsarray.stds["hybDown_et.dat"]]
+        calculated_stds = [statsarray.stds["greenDown_std.dat"],
+                           statsarray.stds["selfUp_std.dat"],
+                           statsarray.stds["hybDown_std.dat"]]
 
         for (a, b) in zip(good_stds, calculated_stds):
             try:
