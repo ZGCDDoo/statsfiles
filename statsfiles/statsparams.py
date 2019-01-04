@@ -183,7 +183,7 @@ class StatsParams:
                     mean += data
                     cpt += 1
                     # print("cpt ", cpt)
-                    # print(array_file + end_file + str(self.iter_start + cpt) + self.ext)
+                    # print(array_file + middle_file + str(self.iter_start + cpt) + self.ext)
                     file_name = os.path.join(self.in_dir, params_file + str(self.iter_start + cpt) + self.ext)
                     (data, file_exists) = self.read_file(file_name, params_names)
             

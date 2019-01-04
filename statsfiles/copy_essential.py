@@ -16,7 +16,12 @@ class CopyEssential:
         self.exts = [".dat", ".dat", ".dat"]
         self.json_files = ["Hyb", "Self", "params"]
 
-        self.iter_max = self.get_iter_max()
+        try:
+            self.iter_max = self.get_iter_max()
+        except FileNotFoundError:
+            # print("Not doing copy essential...")
+            self.iter_max = -100
+
         self.divers_files = ["Updates.json", "Link.json", "script",
                              "params" + str(self.iter_max),  "params" + str(self.iter_max) + ".json"]
 

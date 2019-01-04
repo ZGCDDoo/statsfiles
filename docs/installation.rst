@@ -3,4 +3,8 @@
 Installation
 ================================
 
-Under construction.
+The installation steps are very simple:
+
+.. code-block:: bash
+
+    pip install statsfiles    

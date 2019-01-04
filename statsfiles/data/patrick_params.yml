@@ -17,6 +17,8 @@ array_files:
     - ""
     - Up
     - Down
+  exts:
+    - .dat
 
 param_files:
   names:
