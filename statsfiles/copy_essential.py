@@ -1,8 +1,6 @@
 import shutil
 import os
-import sys
-
-
+import glob
 class CopyEssential:
 
     def __init__(self, out_dir):
@@ -10,7 +8,7 @@ class CopyEssential:
         self.out_dir = out_dir
         self.obs_files = ["n.dat", "n0Up.dat", "n0Down.dat", "ChiSz.dat", "amagn.dat",
                           "docc.dat", "sign.dat", "k.dat", "nSites.dat", "energy.dat",
-                          "KEnergy.dat", "NMeas.dat", "NWorkers.dat", "Sz.dat"]
+                          "KEnergy.dat", "NMeas.dat", "NWorkers.dat", "Sz.dat", "outPutConvention.dat"]
         self.array_files = ["green", "self", "hyb"]
         self.middles = ["", "Up", "Down"]
         self.exts = [".dat", ".dat", ".dat"]
@@ -28,7 +26,7 @@ class CopyEssential:
     def get_iter_max(self):
         """ """
         with open(self.obs_files[0]) as fin:
-            iter_max = len(fin.readlines()) - 1
+            iter_max = len(fin.readlines())
         return iter_max
 
     def copy_obs_files(self):
@@ -37,6 +35,15 @@ class CopyEssential:
         for obs_file in self.obs_files:
             if os.path.isfile(obs_file):
                 shutil.copy(obs_file, os.path.join(self.out_dir, obs_file))
+
+        model_files = list(glob.glob("*.model"))
+        if len(model_files) == 1:
+            model_file = model_files[0]
+            shutil.copy(model_file, os.path.join(self.out_dir, model_file))
+        elif len(model_files) == 0:
+            pass
+        else:
+            raise ValueError("To many model files")
 
     def copy_json(self):
         """ """
