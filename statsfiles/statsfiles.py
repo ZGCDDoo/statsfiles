@@ -33,7 +33,7 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
     params_names_l = yy_params["param_files"]["parameters"]
 
     # do the stats for arrays
-    if array_files:
+    if any(array_files):
         starr = statsarrays.StatsArrays(array_files=array_files,
                                         middle_files=array_files_middles,
                                         ext_files=array_files_exts, iter_start=iter_start,
@@ -45,7 +45,7 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
         starr.write_results(out_dir=out_dir, file_out="statsobs.json")
 
     # do the stats for observables files
-    if obs_files:
+    if any(obs_files):
         stobs = statsobs.StatsObs(obs_files=obs_files, iter_start=iter_start, ignore_col=0, in_dir=os.getcwd(),
                                   warning_only=True)
 
@@ -54,7 +54,7 @@ def run_statsfiles(iter_start: int, yy_params) -> None:
         stobs.write_results(out_dir=out_dir, file_out="statsobs.json")
 
     # do the stats for the parameter files
-    if params_files:
+    if any(params_files):
         stparams = statsparams.StatsParams(params_files=params_files, params_names_l=params_names_l,
                                            ext="", iter_start=iter_start, in_dir=os.getcwd(),
                                            warning_only=True)
