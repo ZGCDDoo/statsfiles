@@ -1,14 +1,30 @@
 import shutil
 import os
 import glob
-class CopyEssential:
 
+
+class CopyEssential:
     def __init__(self, out_dir):
         """ """
         self.out_dir = out_dir
-        self.obs_files = ["n.dat", "n0Up.dat", "n0Down.dat", "ChiSz.dat", "amagn.dat",
-                          "docc.dat", "sign.dat", "k.dat", "nSites.dat", "energy.dat",
-                          "KEnergy.dat", "NMeas.dat", "NWorkers.dat", "Sz.dat", "outPutConvention.dat" ,"Obs.json"]
+        self.obs_files = [
+            "n.dat",
+            "n0Up.dat",
+            "n0Down.dat",
+            "ChiSz.dat",
+            "amagn.dat",
+            "docc.dat",
+            "sign.dat",
+            "k.dat",
+            "nSites.dat",
+            "energy.dat",
+            "KEnergy.dat",
+            "NMeas.dat",
+            "NWorkers.dat",
+            "Sz.dat",
+            "outPutConvention.dat",
+            "Obs.json",
+        ]
         self.array_files = ["green", "self", "hyb"]
         self.middles = ["", "Up", "Down"]
         self.exts = [".dat", ".dat", ".dat"]
@@ -20,8 +36,13 @@ class CopyEssential:
             # print("Not doing copy essential...")
             self.iter_max = -100
 
-        self.divers_files = ["Updates.json", "Link.json", "script",
-                             "params" + str(self.iter_max),  "params" + str(self.iter_max) + ".json"]
+        self.divers_files = [
+            "Updates.json",
+            "Link.json",
+            "script",
+            "params" + str(self.iter_max),
+            "params" + str(self.iter_max) + ".json",
+        ]
 
     def get_iter_max(self):
         """ """
@@ -56,19 +77,16 @@ class CopyEssential:
         """ """
         for (ii, array_file) in enumerate(self.array_files):
             for middle in self.middles:
-                file_name = array_file + middle + \
-                    str(self.iter_max) + self.exts[ii]
+                file_name = array_file + middle + str(self.iter_max) + self.exts[ii]
                 if os.path.isfile(file_name):
-                    shutil.copy(file_name, os.path.join(
-                        self.out_dir, file_name))
+                    shutil.copy(file_name, os.path.join(self.out_dir, file_name))
 
     def copy_divers(self):
         """ """
 
         for divers_file in self.divers_files:
             if os.path.isfile(divers_file):
-                shutil.copy(divers_file, os.path.join(
-                    self.out_dir, divers_file))
+                shutil.copy(divers_file, os.path.join(self.out_dir, divers_file))
 
     def run(self):
         """ """
