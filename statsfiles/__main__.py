@@ -31,13 +31,13 @@ args = parser.parse_args()
 if args.cdh:
     cdh_file_path: str = "data/cdh_params.yml"
     yy_params = yaml.load(
-        pkg_resources.resource_string(__name__, cdh_file_path))
+        pkg_resources.resource_string(__name__, cdh_file_path),  Loader=yaml.FullLoader)
 elif args.patrick:
     patrick_file_path: str = "data/patrick_params.yml"
     yy_params = yaml.load(
-        pkg_resources.resource_string(__name__, patrick_file_path))
+        pkg_resources.resource_string(__name__, patrick_file_path),  Loader=yaml.FullLoader)
 else:
     with open(args.file, "r") as fin:
-        yy_params = yaml.load(fin)
+        yy_params = yaml.load(fin,  Loader=yaml.FullLoader)
 
 statsfiles.run_statsfiles(args.iter_start, yy_params)
