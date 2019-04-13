@@ -47,7 +47,7 @@ class CopyEssential:
     def get_iter_max(self):
         """ """
         with open(self.obs_files[0]) as fin:
-            iter_max = len(fin.readlines())
+            iter_max = len(fin.readlines()) - 1
         return iter_max
 
     def copy_obs_files(self):
