@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="638fc97f-1e1a-45e2-96f1-37cab3b59e02" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statsfiles.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statsfiles.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statsfiles/copy_essential.py" beforeDir="false" afterPath="$PROJECT_DIR$/statsfiles/copy_essential.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statsfiles/statsobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/statsfiles/statsobs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +22,7 @@
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statsfiles/copy_essential.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
@@ -40,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statsfiles/statsobs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+            <state relative-caret-position="143">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -49,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statsfiles/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="77">
+              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -67,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/statsfiles/data/cdh_params.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="717">
               <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
@@ -117,6 +114,7 @@
       <find>last</find>
       <find>iter_end</find>
       <find>iter</find>
+      <find>file</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,10 +125,10 @@
       <list>
         <option value="$PROJECT_DIR$/statsfiles/__main__.py" />
         <option value="$PROJECT_DIR$/statsfiles/statsarrays.py" />
-        <option value="$PROJECT_DIR$/statsfiles/statsobs.py" />
         <option value="$PROJECT_DIR$/statsfiles/data/cdh_params.yml" />
         <option value="$PROJECT_DIR$/statsfiles/statsfiles.py" />
         <option value="$PROJECT_DIR$/statsfiles/copy_essential.py" />
+        <option value="$PROJECT_DIR$/statsfiles/statsobs.py" />
       </list>
     </option>
   </component>
@@ -150,6 +148,17 @@
             <path>
               <item name="statsfiles" type="b2602c69:ProjectViewProjectNode" />
               <item name="statsfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="statsfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="statsfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="statsfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="statsfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="statsfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="statsfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,13 +207,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6310000" />
+    <option name="totallyTimeSpent" value="8420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25947997" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25947997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -215,7 +224,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3295325" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3295325" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -248,27 +257,10 @@
     <entry file="file://$PROJECT_DIR$/docs/index.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/statsfiles/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statsfiles/statsfiles.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statsfiles/data/cdh_params.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -294,8 +286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/statsfiles/statsobs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        <state relative-caret-position="143">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -306,6 +298,23 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statsfiles/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statsfiles/data/cdh_params.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>

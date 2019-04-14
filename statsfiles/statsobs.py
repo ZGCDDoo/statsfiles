@@ -157,7 +157,10 @@ class StatsObs:
 
         # By convention, I will write only the first mean and std to disk
         for i in range(len(self.obs_files)):
-            out_dict[self.obs_files[i]] = [self.means[i][0], self.stds[i][0]]
+            if np.isnan(self.means[i][0])  or np.isnan(self.stds[i][0]):
+                out_dict[self.obs_files[i]] = ["null", "null"]
+            else:
+                out_dict[self.obs_files[i]] = [self.means[i][0], self.stds[i][0]]
 
         with open(file_out, mode="a") as fout:
             json.dump(out_dict, fout, indent=4)
