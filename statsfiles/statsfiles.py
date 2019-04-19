@@ -8,7 +8,8 @@ Created on Tue Jan 26 10:03:34 2016
 import time
 import os
 import sys
-
+import pkg_resources
+import yaml
 
 from . import statsobs
 from . import statsarrays
@@ -16,7 +17,10 @@ from . import statsparams
 from . import copy_essential
 
 
-def run_statsfiles(iter_start: int, yy_params) -> None:
+yy_params_default = yaml.load(
+        pkg_resources.resource_string(__name__, "data/cdh_params.yml"),  Loader=yaml.FullLoader)
+
+def run_statsfiles(iter_start: int, yy_params=yy_params_default) -> None:
 
     out_dir = time.strftime("Stats" + "-%Y-%m-%d--%Hh%M")
     os.mkdir(out_dir)
